@@ -45,6 +45,7 @@
     [ Fixed Header ]*/
     var headerDesktop = $('.container-menu-desktop');
     var wrapMenu = $('.wrap-menu-desktop');
+    var image = $('.image1');
 
     if($('.top-bar').length > 0) {
         var posWrapHeader = $('.top-bar').height();
@@ -57,20 +58,27 @@
     if($(window).scrollTop() > posWrapHeader) {
         $(headerDesktop).addClass('fix-menu-desktop');
         $(wrapMenu).css('top',0);
+        $(image).css('display','block');
+
+
     }
     else {
         $(headerDesktop).removeClass('fix-menu-desktop');
         $(wrapMenu).css('top',100);
+        $(image).css('display','none');
+
     }
 
     $(window).on('scroll',function(){
         if($(this).scrollTop() > posWrapHeader) {
             $(headerDesktop).addClass('fix-menu-desktop');
             $(wrapMenu).css('top',0);
+            $(image).css('display','block');
         }
         else {
             $(headerDesktop).removeClass('fix-menu-desktop');
             $(wrapMenu).css('top',100);
+            $(image).css('display','none');
         }
     });
 
